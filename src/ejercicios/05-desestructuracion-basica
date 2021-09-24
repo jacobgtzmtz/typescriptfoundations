@@ -1,0 +1,43 @@
+interface Reproductor {
+  volumen: number;
+  segundo: number;
+  cancion: string;
+  detalles: Detalles;
+}
+
+interface Detalles {
+  autor: string;
+  anio: number;
+}
+
+const reproductor: Reproductor = {
+  volumen: 90,
+  segundo: 0,
+  cancion: "Abeja reina",
+  detalles: {
+    autor: "Los traileros",
+    anio: 1978,
+  },
+};
+
+//Desestructuración de objetos.
+
+/*
+se crea una constante de objeto y se le asigna el objeto del cual se desde obtener sus propiedades,
+en la estructura del objeto constante, se especifican las propiedades que se desean extraer
+y tambien se le puede cambiar el nombre con los dos puntos  ejemplo vilumen --> vol
+*/
+const {volumen: vol, segundo, cancion, detalles} = reproductor;
+const { autor } = detalles;
+
+
+console.log('volumen: ' + vol);
+console.log('segundo: ' + segundo);
+console.log('cancion: ' + cancion);
+console.log('autor: ' + autor);
+
+//Desestructuración de arreglos.
+const dbz: string[] = ['Goku', 'Vegeta', 'Trunks'];
+
+const [,,prop3] = dbz;
+console.log(prop3);
